@@ -1,6 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import TodosItemRow from './components/TodosItemRow';
+import TodosTable from './components/TodosTable';
 
 function App() {
 
@@ -16,52 +15,7 @@ function App() {
           Your Todo's
         </div>
         <div className='card-body'>
-          <table className='table table-hover'>
-            <thead>
-              <tr>
-                <th scope='col'>#</th>
-                <th scope='col'>Description</th>
-                <th scope='col'>Assigned To</th>
-              </tr>
-            </thead>
-            <tbody>
-              <TodosItemRow 
-              rowNumber={todos[0].rowNumber} 
-              rowDescription={todos[0].rowDescription} 
-              assignedTo={todos[0].assignedTo}/>
-
-              <TodosItemRow 
-              rowNumber={todos[1].rowNumber} 
-              rowDescription={todos[1].rowDescription} 
-              assignedTo={todos[1].assignedTo}/>
-
-              <TodosItemRow 
-              rowNumber={todos[2].rowNumber} 
-              rowDescription={todos[2].rowDescription} 
-              assignedTo={todos[2].assignedTo}/>
-
-              <TodosItemRow 
-              rowNumber={todos[3].rowNumber} 
-              rowDescription={todos[3].rowDescription} 
-              assignedTo={todos[3].assignedTo}/>
-              
-              <tr>
-                <th scope='row'>2</th>
-                <td>Washing car</td>
-                <td>Doe</td>
-              </tr>
-              <tr>
-                <th scope='row'>3</th>
-                <td>Hair Cutting</td>
-                <td>Maria</td>
-              </tr>
-              <tr>
-                <th scope='row'>4</th>
-                <td>Submitting Bills</td>
-                <td>John</td>
-              </tr>
-            </tbody>
-          </table>
+          <TodosTable todos={todos}/>
         </div>
       </div>
     </div>
