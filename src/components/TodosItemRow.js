@@ -1,9 +1,13 @@
 function TodosItemRow() {
+
+    const rowNumber = 1;
+    const rowDescription = 'Watering Plants';
+    const assignedTo = 'Joe'
     return(
         <tr>
-            <th scope='row'>1</th>
-            <td>Watering Plants</td>
-            <td>Joe</td>
+            <th scope='row'>{{rowNumber}}</th>
+            <td>{{rowDescription}}</td>
+            <td>{{assignedTo}}</td>
         </tr>
     )
 }
