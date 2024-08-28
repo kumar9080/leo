@@ -11,29 +11,13 @@ function TodosTable(props){
             </tr>
             </thead>
             <tbody>
-                <TodosItemRow 
-                    rowNumber={props.todos[0].rowNumber} 
-                    rowDescription={props.todos[0].rowDescription} 
-                    assignedTo={props.todos[0].assignedTo}
-                />
 
-                <TodosItemRow 
-                    rowNumber={props.todos[1].rowNumber} 
-                    rowDescription={props.todos[1].rowDescription} 
-                    assignedTo={props.todos[1].assignedTo}
-                />
-
-                <TodosItemRow 
-                    rowNumber={props.todos[2].rowNumber} 
-                    rowDescription={props.todos[2].rowDescription} 
-                    assignedTo={props.todos[2].assignedTo}
-                />
-
-                <TodosItemRow 
-                    rowNumber={props.todos[3].rowNumber} 
-                    rowDescription={props.todos[3].rowDescription} 
-                    assignedTo={props.todos[3].assignedTo}
-                />
+                {props.todos.map(todo =>(
+                    <TodosItemRow 
+                    rowNumber={todo.rowNumber}
+                    rowDescription={todo.rowDescription}
+                    assignedTo={todo.assignedTo}/>
+                ))}
                 <tr>
                     <th scope='row'>2</th>
                     <td>Washing car</td>
