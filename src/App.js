@@ -11,7 +11,7 @@ function App() {
     {rowNumber: 4, rowDescription: 'Bank Visiting', assignedTo: 'Maria'}])
 
     const addNewTodosHandler = (assigned, description)=>{
-      console.log('New Todos item added');
+      console.log('New Todos item added',assigned);
       let rowNumber = 0;
       if (todos.length > 0){
         rowNumber = todos[todos.length - 1].rowNumber + 1;
@@ -31,8 +31,7 @@ function App() {
         </div>
         <div className='card-body'>
           <TodosTable todos={todos}/>
-          <button className='btn btn-primary' onClick={addNewTodosHandler}>Add new Todos</button>
-          <NewTodoForm/>
+          <NewTodoForm addNewTodosHandler={addNewTodosHandler} />
         </div>
       </div>
     </div>
