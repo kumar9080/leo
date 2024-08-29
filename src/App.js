@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import TodosTable from './components/TodosTable';
 import { useState } from 'react';
+import NewTodoForm from './components/NewTodoForm';
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
         <div className='card-body'>
           <TodosTable todos={todos}/>
           <button className='btn btn-primary' onClick={addNewTodosHandler}>Add new Todos</button>
+          <NewTodoForm/>
         </div>
       </div>
     </div>
