@@ -10,29 +10,16 @@ function App() {
     {rowNumber: 3, rowDescription: 'Car Servicing', assignedTo: 'John'},
     {rowNumber: 4, rowDescription: 'Bank Visiting', assignedTo: 'Maria'}])
 
-    const addNewTodosHandler = ()=>{
-      console.log('New Todos item added');
-      if (todos.length > 0){
-        const newTodos = {rowNumber : todos.length + 1, rowDescription:'Buying Medicine', assignedTo: 'Kumar'};
-        // todos.push(newTodos)
-        setTodos(todos => [...todos, newTodos]);
-      }
-      console.log(todos);
-    }
-
-function App() {
-
-  const [todos, setTodos] = useState( [{rowNumber: 1, rowDescription: 'Feeding Dog', assignedTo: 'John'},
-    {rowNumber: 2, rowDescription: 'Laundry service', assignedTo: 'Doe'},
-    {rowNumber: 3, rowDescription: 'Car Servicing', assignedTo: 'John'},
-    {rowNumber: 4, rowDescription: 'Bank Visiting', assignedTo: 'Maria'}])
-
     const addNewTodosHandler = (assigned, description)=>{
       console.log('New Todos item added');
+      let rowNumber = 0;
       if (todos.length > 0){
-        const newTodos = {rowNumber : todos.length + 1, rowDescription: description, assignedTo: assigned};
+        rowNumber = todos[todos.length - 1].rowNumber + 1;
+        const newTodos = {rowNumber : rowNumber, rowDescription: description, assignedTo: assigned};
         // todos.push(newTodos)
         setTodos(todos => [...todos, newTodos]);
+      }else {
+        rowNumber = 1;
       }
     }
 
@@ -51,5 +38,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
