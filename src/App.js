@@ -1,8 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
-import TodosItemRow from './components/TodosItemRow';
+import TodosTable from './components/TodosTable';
 
 function App() {
+
+  const todos = [{rowNumber: 1, rowDescription: 'Feeding Dog', assignedTo: 'John'},
+    {rowNumber: 2, rowDescription: 'Laundry service', assignedTo: 'Doe'},
+    {rowNumber: 3, rowDescription: 'Car Servicing', assignedTo: 'John'},
+    {rowNumber: 4, rowDescription: 'Bank Visiting', assignedTo: 'Maria'}]
+
   return (
     <div className='mt-5 container'>
       <div className='card'>
@@ -10,33 +15,7 @@ function App() {
           Your Todo's
         </div>
         <div className='card-body'>
-          <table className='table table-hover'>
-            <thead>
-              <tr>
-                <th scope='col'>#</th>
-                <th scope='col'>Description</th>
-                <th scope='col'>Assigned To</th>
-              </tr>
-            </thead>
-            <tbody>
-              <TodosItemRow/>
-              <tr>
-                <th scope='row'>2</th>
-                <td>Washing car</td>
-                <td>Doe</td>
-              </tr>
-              <tr>
-                <th scope='row'>3</th>
-                <td>Hair Cutting</td>
-                <td>Maria</td>
-              </tr>
-              <tr>
-                <th scope='row'>4</th>
-                <td>Submitting Bills</td>
-                <td>John</td>
-              </tr>
-            </tbody>
-          </table>
+          <TodosTable todos={todos}/>
         </div>
       </div>
     </div>
