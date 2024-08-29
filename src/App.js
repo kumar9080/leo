@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import TodosTable from './components/TodosTable';
 import { useState } from 'react';
@@ -20,6 +19,13 @@ function App() {
       }
       console.log(todos);
     }
+
+function App() {
+
+  const todos = [{rowNumber: 1, rowDescription: 'Feeding Dog', assignedTo: 'John'},
+    {rowNumber: 2, rowDescription: 'Laundry service', assignedTo: 'Doe'},
+    {rowNumber: 3, rowDescription: 'Car Servicing', assignedTo: 'John'},
+    {rowNumber: 4, rowDescription: 'Bank Visiting', assignedTo: 'Maria'}]
 
   return (
     <div className='mt-5 container'>
