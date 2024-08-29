@@ -23,6 +23,13 @@ function App() {
       }
     }
 
+    const deleteRowItem = (itemTobeDeleted)=>{
+      const filtered = todos.filter((value)=>{
+        return value.rowNumber !== itemTobeDeleted;
+      })
+      setTodos(filtered);
+    }
+
   return (
     <div className='mt-5 container'>
       <div className='card'>
@@ -30,7 +37,7 @@ function App() {
           Your Todo's
         </div>
         <div className='card-body'>
-          <TodosTable todos={todos}/>
+          <TodosTable todos={todos} deleteRowItem={deleteRowItem}/>
           <NewTodoForm addNewTodosHandler={addNewTodosHandler} />
         </div>
       </div>

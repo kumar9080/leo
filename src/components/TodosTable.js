@@ -17,7 +17,9 @@ function TodosTable(props){
                     key={todo.rowNumber}
                     rowNumber={todo.rowNumber}
                     rowDescription={todo.rowDescription}
-                    assignedTo={todo.assignedTo}/>
+                    assignedTo={todo.assignedTo}
+                    deleteRowItem={props.deleteRowItem}
+                    />
                 ))}
             </tbody>
       </table>
