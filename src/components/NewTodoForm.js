@@ -21,6 +21,7 @@ function NewTodoForm(props){
     }
 }
 
+function NewTodoForm(props){
     return(
         <div className="mt-5">
             <form>
@@ -32,10 +33,11 @@ function NewTodoForm(props){
                     <label className="form-label">Description</label>
                     <textarea className="form-control" rows={3} onChange={descriptionChange}  value={description} required></textarea>
                 </div>
-                <button type="button" className="btn btn-primary" onClick={submitTodos}>Add Todo</button>
+                <button type="button" className="btn btn-primary" onClick={props.submitTodos}>Add Todo</button>
             </form>
         </div>
     )
+}
 }
 
 export default NewTodoForm

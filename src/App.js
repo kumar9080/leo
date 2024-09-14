@@ -25,11 +25,21 @@ function App() {
       }
     }
 
-    const deleteRowItem = (itemTobeDeleted)=>{
-      const filtered = todos.filter((value)=>{
-        return value.rowNumber !== itemTobeDeleted;
-      })
-      setTodos(filtered);
+    const submitTodos = ()=>{
+      if(description !=='' && assigned !== ''){
+          props.addNewTodosHandler(assigned, description)
+          setDescription('');
+          setAssignedTo('');
+      }
+  }
+
+    const deleteTodoRow = (rowToDeleted)=>{
+      if(todos.length > 0) {
+        let filtered = todos.filter(function(value){
+          return value.rowNumber !== rowToDeleted
+        })
+        setTodos(filtered);
+      }
     }
 
   return (
@@ -39,12 +49,8 @@ function App() {
           Your Todo's
         </div>
         <div className='card-body'>
-          <TodosTable todos={todos} deleteRowItem={deleteRowItem}/>
-          <button className='btn btn-primary' onClick={()=>setAddTodoForm(!showAddTodoForm)}>
-            {showAddTodoForm? 'Close New Todos': 'New Todos'}
-            
-          </button>
-            {showAddTodoForm && <NewTodoForm addNewTodosHandler={addNewTodosHandler} /> }
+          <TodosTable todos={todos} deleteTodoRow = {deleteTodoRow}/>
+          <NewTodoForm submitTodos={submitTodos}/>
         </div>
       </div>
     </div>
