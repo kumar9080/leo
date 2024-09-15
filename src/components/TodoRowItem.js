@@ -1,9 +1,9 @@
- function TodoRowItem(){
+ function TodoRowItem(props){
     return(
-        <tr>
-            <th scope="row">1</th>
-            <td>Bill Submission</td>
-            <td>Kumar Rahul</td>
+        <tr onClick={()=>props.deleteTodoRow(props.rowNumber)}>
+            <th scope="row">{props.rowNumber}</th>
+            <td>{props.rowDescription}</td>
+            <td>{props.assignedTo}</td>
         </tr>
     )
 }
