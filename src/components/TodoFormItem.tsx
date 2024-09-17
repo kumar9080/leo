@@ -1,15 +1,16 @@
 import { useState } from "react";
+import React from "react";
 
-function TodoFormItem(props){
+const TodoFormItem: React.FC<{addNewTodo: Function}> = (props)=>{
 
     const [description, setDescription] = useState('');
     const [assigned, setAssigned] = useState('');
 
-    const setDescriptionChange = (event)=>{
+    const setDescriptionChange = (event:any)=>{
         setDescription(event.target.value)
     }
 
-    const setAssignedToChange = (event)=>{
+    const setAssignedToChange = (event:any)=>{
         setAssigned(event.target.value);
     }
 
