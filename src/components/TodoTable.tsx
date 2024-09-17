@@ -1,6 +1,6 @@
 import TodoRowItem from "./TodoRowItem"
 
-function ToDoTable(props){
+function ToDoTable(props: {todos: ToDoModel[] , deleteTodoRow:Function}){
 
     return(
         <table className="table table-hover">

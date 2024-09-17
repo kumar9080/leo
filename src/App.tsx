@@ -15,7 +15,7 @@ function App() {
 
   const [showAddtodoForm, setAddtodoForm] = useState(false);
 
-  const addNewTodo = (description, assigned)=>{
+  const addNewTodo = (description:string, assigned: string)=>{
     if(todos.length > 0) {
       const newTodos = {rowNumber: todos.length + 1 , rowDescription: description, assignedTo: assigned}
       // todos.push(newTodos);
@@ -23,7 +23,7 @@ function App() {
     }
   };
 
-  const deleteTodoRow = (deleteTodoRowNumber) =>{
+  const deleteTodoRow = (deleteTodoRowNumber:number) =>{
     console.log(deleteTodoRowNumber);
     const filtered = todos.filter(value =>{
       return value.rowNumber !== deleteTodoRowNumber;

@@ -1,15 +1,15 @@
 import { useState } from "react";
 
-function TodoFormItem(props){
+function TodoFormItem(props :{addNewTodo: Function}){
 
     const [description, setDescription] = useState('');
     const [assigned, setAssigned] = useState('');
 
-    const setDescriptionChange = (event)=>{
+    const setDescriptionChange = (event:any)=>{
         setDescription(event.target.value)
     }
 
-    const setAssignedToChange = (event)=>{
+    const setAssignedToChange = (event:any)=>{
         setAssigned(event.target.value);
     }
 
